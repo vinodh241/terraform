@@ -5,55 +5,55 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-        default = "t3.micro"
-  
+  default = "t3.micro"
+
 }
 
 variable "ec2_tags" {
-    type = map (string)
-    default = {
-        Name = "Terraform_Roboshop"
-        Purpose = "provisioners demo"
-    }
-  
+  type = map(string)
+  default = {
+    Name    = "Terraform_Roboshop"
+    Purpose = "provisioners demo"
+  }
+
 }
 
 variable "sg_name" {
-    default = "provisioners demo"
-  
+  default = "provisioners demo"
+
 }
 
 variable "sg_description" {
 
-    default = "allowing all ports form internet"
-  
+  default = "allowing all ports form internet"
+
 }
 
 variable "to_port" {
-    default = 0
-  
+  default = 0
+
 }
 
 variable "from_port" {
-    default = 0
-    type = number
-  
+  default = 0
+  type    = number
+
 }
 
 variable "cidr_blocks" {
-    default = ["0.0.0.0/0"]
-    type = list(string)
-  
+  default = ["0.0.0.0/0"]
+  type    = list(string)
+
 }
 
 variable "sg_tags" {
-    default = {
-        Name = "provisioners demo"
-    }
-  
+  default = {
+    Name = "provisioners demo"
+  }
+
 }
 variable "environment" {
-    default = "dev" # , "prod" , "UAT"
-    type = string
-  
+  default = "dev" # , "prod" , "UAT"
+  type    = string
+
 }
