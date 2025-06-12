@@ -5,7 +5,15 @@ resource "aws_instance" "RoboShop" {
   tags                   = var.ec2_tags
 
   provisioner "local-exec" {
-    command = "echo server's IP address ${self.private_ip} >> private_ips.txt"
+    command = " ${self.private_ip} > private_ips.txt "
+    on_failure = continue
+
+  }
+
+    provisioner "local-exec" {
+    command = " echo ${self.private_ip}  private_ips.txt "
+    on_failure = continue
+    when = destroy
 
   }
 
